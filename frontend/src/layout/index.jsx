@@ -4,9 +4,9 @@ import Header from './Header';
 
 function Layout() {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen justify-between">
       <Header />
-      <main className="flex-1">
+      <main className="mb-auto w-10/12 max-w-4xl mx-auto">
         <Outlet />
       </main>
       <Footer />
