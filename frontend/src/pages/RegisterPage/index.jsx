@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { registerUser } from '../../utils/thunkFunctions';
 
 function RegisterPage() {
   const {
@@ -9,7 +12,18 @@ function RegisterPage() {
     reset,
   } = useForm({ mode: 'onChange' });
 
+  const dispatch = useDispatch();
+
   const onSubmit = ({ email, password, name }) => {
+    const body = {
+      email,
+      password,
+      name,
+      image: `https://via.placeholder.com/600x400?text=no+user+image`,
+    };
+
+    dispatch(registerUser(body));
+
     reset();
   };
 
