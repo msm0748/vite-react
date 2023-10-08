@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { registerUser } from '../../utils/thunkFunctions';
+import { registerUser } from '../../store/thunkFunctions';
 
 function RegisterPage() {
   const {
@@ -48,7 +47,10 @@ function RegisterPage() {
         <h1 className="text-3xl font-semibold text-center">회원가입</h1>
         <form className="mt-6" onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-2">
-            <label htmlFor="email" className="text-sm font-semibold text-gray-800">
+            <label
+              htmlFor="email"
+              className="text-sm font-semibold text-gray-800"
+            >
               Email
             </label>
             <input
@@ -64,7 +66,10 @@ function RegisterPage() {
             )}
           </div>
           <div className="mb-2">
-            <label htmlFor="name" className="text-sm font-semibold text-gray-800">
+            <label
+              htmlFor="name"
+              className="text-sm font-semibold text-gray-800"
+            >
               Name
             </label>
             <input
@@ -80,7 +85,10 @@ function RegisterPage() {
             )}
           </div>
           <div className="mb-2">
-            <label htmlFor="password" className="text-sm font-semibold text-gray-800">
+            <label
+              htmlFor="password"
+              className="text-sm font-semibold text-gray-800"
+            >
               Password
             </label>
             <input
