@@ -25,6 +25,8 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+app.use('/users', require('./routes/users'));
+
 app.listen(process.env.PORT, () => {
   console.log(`listening on ${process.env.PORT}`);
 });
